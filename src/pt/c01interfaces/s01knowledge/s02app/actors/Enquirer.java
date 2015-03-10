@@ -31,7 +31,6 @@ public class Enquirer implements IEnquirer
 
 		animal:
         for (animalTestado = 0; animalTestado < listaAnimais.length ; animalTestado++){
-        	System.out.println(listaAnimais[animalTestado]);
         	obj = bc.recuperaObjeto(listaAnimais[animalTestado]);
         	IDeclaracao decl = obj.primeira();
         	
@@ -42,7 +41,7 @@ public class Enquirer implements IEnquirer
 				searcher = basePerguntas.get(pergunta);
 				
 				if(searcher != null){
-					if(searcher == respostaEsperada){
+					if(searcher.equalsIgnoreCase(respostaEsperada)){
 						decl = obj.proxima();
 						continue pergunta;
 					}
@@ -52,7 +51,8 @@ public class Enquirer implements IEnquirer
 				else{
 					String resposta = responder.ask(pergunta);
 					basePerguntas.put(pergunta, resposta);
-					if(searcher == respostaEsperada){
+					searcher=basePerguntas.get(pergunta);
+					if(searcher.equalsIgnoreCase(respostaEsperada)){
 						decl = obj.proxima();
 						continue pergunta;
 					}
@@ -65,8 +65,6 @@ public class Enquirer implements IEnquirer
 		
 		if(animalTestado==listaAnimais.length)
 			animalTestado--;
-			
-		//boolean acertei = responder.finalAnswer(listaAnimais[animalTestado]);
 		
 		if (responder.finalAnswer(listaAnimais[animalTestado]))
 			System.out.println("Oba! Acertei!");
