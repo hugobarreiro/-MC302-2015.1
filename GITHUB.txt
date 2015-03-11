@@ -4,8 +4,8 @@ Turmas A/B/C/D
 Daniel Pinheiro Cunha	RA 140561 
 Victor Hugo Barreiro	RA 118876
 
-Link para o fork do repositório original
+Link para o fork do repositorio original
 https://github.com/hugobarreiro/fluid2learn
 
-Link para o repositório modificado para o laboratório
+Link para o repositorio modificado para o laboratorio
 https://github.com/hugobarreiro/-MC302-2015.1
